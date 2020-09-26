@@ -95,8 +95,7 @@ def truthTable(formula):
 
 # DEMO – this should work once you add the missing code above
 
-# myformula=And(Implies(Variable('p'),Variable('q')),Implies(Variable('p'),Variable('r')))
-myformula = And(Variable('p'),Not(Variable('p')))
+myformula=And(Implies(Variable('p'),Variable('q')),Implies(Variable('p'),Variable('r')))
 myformulaTable = truthTable(myformula)
 
 print(myformulaTable)
