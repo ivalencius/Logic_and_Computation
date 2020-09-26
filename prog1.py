@@ -95,17 +95,35 @@ def truthTable(formula):
 
 # DEMO – this should work once you add the missing code above
 
-myformula=And(Implies(Variable('p'),Variable('q')),Implies(Variable('p'),Variable('r')))
+# myformula=And(Implies(Variable('p'),Variable('q')),Implies(Variable('p'),Variable('r')))
+myformula = Or(Variable('p'), Variable('p'))
+myformulaTable = truthTable(myformula)
 
-print( truthTable(myformula) )
+print(myformulaTable)
 
 # Uncomment the following lines and provide the code to compute them
 
-# def isTautology(formula):
-     # ADD CODE HERE
+def isTautology(formula):
+     vals = truthValues(formula)
+     if False in vals:
+         return "F is not a tautology"
+     else:
+        return "F is a tautology"
     
-# def isSatisfiable(formula):
-     # ADD CODE HERE
+def isSatisfiable(formula):
+     vals = truthValues(formula)
+     if True in vals:
+         return "F is satisfiable"
+     else:
+        return "F is not satisfiable"
         
-# def isContradiction(formula):
-     # ADD CODE HERE
+def isContradiction(formula):
+     vals = truthValues(formula)
+     if True in vals:
+         return "F is not a contradiction"
+     else:
+        return "F is a contradiction"
+
+print(isTautology(myformula))
+print(isSatisfiable(myformula))
+print(isContradiction(myformula))
