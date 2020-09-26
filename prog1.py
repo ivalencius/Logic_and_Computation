@@ -64,7 +64,7 @@ class Not(Formula):
     def variables(self):
         return self.sub.variables()
     def evaluate(self,values):
-        return not self.evaluate(values)
+        return not self.sub.evaluate(values)
 
 # listAllPossibleValues takes a list of variable names, it returns a list of pairs,
 #   giving all possible combinations of True/False values for the given variables
@@ -96,7 +96,7 @@ def truthTable(formula):
 # DEMO – this should work once you add the missing code above
 
 # myformula=And(Implies(Variable('p'),Variable('q')),Implies(Variable('p'),Variable('r')))
-myformula = Or(Variable('p'), Variable('p'))
+myformula = And(Variable('p'),Not(Variable('p')))
 myformulaTable = truthTable(myformula)
 
 print(myformulaTable)
