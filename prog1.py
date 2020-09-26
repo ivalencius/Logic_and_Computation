@@ -54,7 +54,7 @@ class Implies(Formula):
     def variables(self):
         return self.first.variables().union(self.second.variables())
     def evaluate(self,values):
-        Not(self.first.evaluate(values)) or self.second.evaluate(values)
+        return self.second.evaluate(values) or not(self.first.evaluate(values))
 
 class Not(Formula):
     def __init__(self,sub):
@@ -64,7 +64,7 @@ class Not(Formula):
     def variables(self):
         return self.sub.variables()
     def evaluate(self,values):
-        not self.evaluate(values)
+        return not self.evaluate(values)
 
 # listAllPossibleValues takes a list of variable names, it returns a list of pairs,
 #   giving all possible combinations of True/False values for the given variables
