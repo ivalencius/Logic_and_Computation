@@ -126,3 +126,4 @@ def isContradiction(formula):
 print(isTautology(myformula))
 print(isSatisfiable(myformula))
 print(isContradiction(myformula))
+
