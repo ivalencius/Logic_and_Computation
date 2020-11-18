@@ -11,8 +11,8 @@ def extended_Euclid(n1,n2):
     return (b, a-b*q, d)   
 
 def main():
-    random_num1 = random.getrandbits(1000)
-    random_num2 = random.getrandbits(1000)
+    random_num1 = random.getrandbits(4000)
+    random_num2 = random.getrandbits(4000)
     (a, b, gcd) = extended_Euclid(random_num1, random_num2)
     print("Number 1 = \n%d" %(random_num1))
     print("Number 2 = \n%d"%(random_num2))
